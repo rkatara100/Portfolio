@@ -3,7 +3,6 @@ import "./Hero.scss";
 import { animate, motion } from "framer-motion";
 import { Link as ScrollLink } from 'react-scroll';
 
-import { transition } from 'd3';
 
 const Hero = () => {
       const TextVariants = {
