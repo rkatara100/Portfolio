@@ -3,7 +3,7 @@ import "./sidebar.scss";
 import Links from "./links/Links";
 import ToggleButton from "./button/ToggleButton";
 import { delay, motion, transform } from "framer-motion";
-import { transition } from "d3";
+
 const Sidebar = () => {
 
       const [open, setOpen] = useState(false);

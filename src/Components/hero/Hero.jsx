@@ -51,7 +51,7 @@ const Hero = () => {
                   <div className="wrapper">
                         <motion.div className="textContainer" variants={TextVariants} animate="animate" initial="initial">
                               <motion.h2 variants={TextVariants}>ROHIT KATARA</motion.h2>
-                              <motion.h1 variants={TextVariants}> Web Developer</motion.h1>
+                              <motion.h1 variants={TextVariants}> Fullstack Web Developer</motion.h1>
                               <motion.div className="buttons" variants={TextVariants}>
                                     <motion.button variants={TextVariants}>See the latest works</motion.button>
                                     <motion.button as={ScrollLink}
