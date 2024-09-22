@@ -4,21 +4,22 @@ import "./Portfolio.scss";
 
 
 const items = [
+
       {
             id: "1",
+            title: "DOCTO 24x7",
+            img: "https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg",
+            desc: "Online Doctor Consultation Platform.",
+            link: "https://docto-24x7.vercel.app/",
+      },
+      {
+            id: "2",
             title: "GameOn APP",
             img: "https://images.pexels.com/photos/50614/pexels-photo-50614.jpeg?auto=compress&cs=tinysrgb&w=600",
             desc: "Modern web application that combines the power of React.js, Chakra UI.",
             link: "https://new1on.netlify.app/",
       },
-      {
-            id: "2",
-            title: "TECHNO",
-            img: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800",
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, iure!",
-            link: "https://techno12.netlify.app/",
 
-      },
       {
             id: "3",
             title: "GSAP & JS",
@@ -55,6 +56,7 @@ const Single = ({ item }) => {
       </section >;
 
 }
+
 const Portfolio = () => {
       const ref = useRef(null);
 
@@ -67,6 +69,7 @@ const Portfolio = () => {
             stiffness: 100,
             damping: 30,
       })
+
 
       return (
             <div className='portfolio' ref={ref}>
