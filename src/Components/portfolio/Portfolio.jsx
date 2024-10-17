@@ -14,13 +14,20 @@ const items = [
       },
       {
             id: "2",
+            title: "BHOOK",
+            img: "https://media.istockphoto.com/id/1306458509/photo/indian-food-delivery-indian-cuisine-and-food-delivery-smartphone-apps-online.webp?a=1&b=1&s=612x612&w=0&k=20&c=HzQGbgrjq2jwpTKfl8goX-pdlSScNoXaeaGdk-GcALY=",
+            desc: "Food Delivery Application",
+            link: "https://bhook-cyan.vercel.app/",
+      },
+      {
+            id: "3",
             title: "Fin-APP",
             img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhNv1Y_V5Z-BPyEyphX-E3z2Ts3GZIywIxLg&s",
             desc: "Real-Time Social Media App with Video Room",
             link: "https://github.com/rkatara100/Fin_app",
       },
       {
-            id: "3",
+            id: "4",
             title: "GSAP & JS",
             img: "https://images.pexels.com/photos/50614/pexels-photo-50614.jpeg?auto=compress&cs=tinysrgb&w=600",
             desc: "Mesmerizing animated website that draw amazing attention.",
@@ -28,6 +35,7 @@ const items = [
 
       },
 ]
+
 
 const Single = ({ item }) => {
       const ref = useRef(null);
