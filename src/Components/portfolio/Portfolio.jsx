@@ -17,7 +17,7 @@ const items = [
             title: "BHOOK",
             img: "https://media.istockphoto.com/id/1306458509/photo/indian-food-delivery-indian-cuisine-and-food-delivery-smartphone-apps-online.webp?a=1&b=1&s=612x612&w=0&k=20&c=HzQGbgrjq2jwpTKfl8goX-pdlSScNoXaeaGdk-GcALY=",
             desc: "Food Delivery Application",
-            link: "https://bhook-cyan.vercel.app/",
+            link: "https://bhook-frontend.onrender.com/",
       },
       {
             id: "3",
