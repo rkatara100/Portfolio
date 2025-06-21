@@ -28,6 +28,14 @@ const items = [
       },
       {
             id: "4",
+            title: "Typing Game",
+            img: "https://media.istockphoto.com/id/1369199360/photo/portrait-of-a-handsome-young-businessman-working-in-office.jpg?s=612x612&w=0&k=20&c=ujyGdu8jKI2UB5515XZA33Tt4DBhDU19dKSTUTMZvrg=",
+            desc: " Build an interactive typing game featuring multiplayer and single-player modes with real-time metrics.",
+            link: "https://github.com/rkatara100/Typing-Socket.io",
+
+      },
+      {
+            id: "4",
             title: "GSAP & JS",
             img: "https://images.pexels.com/photos/50614/pexels-photo-50614.jpeg?auto=compress&cs=tinysrgb&w=600",
             desc: "Mesmerizing animated website that draw amazing attention.",
@@ -50,12 +58,12 @@ const Single = ({ item }) => {
             <div className="container" >
                   <div className="wrapper">
                         <div className="imageContainer" ref={{ ref }} >
-                              <img src={item.img} />
+                              <img className='image' src={item.img} />
                         </div>
                         <motion.div className="textContainer" style={{ y }}>
                               <h2>{item.title}</h2>
                               <p>{item.desc}</p>
-                              <button ><a href={item.link} target='_blank'>see demo</a></button>
+                              <button ><a href={item.link} target='_blank' rel="noreferrer">see demo</a></button>
                         </motion.div>
                   </div>
             </div>
