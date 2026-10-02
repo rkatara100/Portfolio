@@ -1,115 +1,177 @@
 @import "../../app.scss";
 
 .portfolio {
-      position: relative;
-      // border: 1px solid greenyellow;
+      max-width: 1166px;
+      margin: auto;
+      padding: 120px 24px;
 
-      .progress {
-            position: sticky;
-            top: 0;
-            left: 0;
-            padding-top: 50px;
+      .portfolioHeader {
             text-align: center;
-            color: orange;
-            font-size: 36px;
+            margin-bottom: 80px;
 
-            @include mobile {
-                  font-size: 24px;
-                  padding-top: calc(100vh - 100px);
-
+            .eyebrow {
+                  display: inline-block;
+                  letter-spacing: 6px;
+                  text-transform: uppercase;
+                  font-size: 13px;
+                  color: gray;
+                  margin-bottom: 14px;
             }
 
-            .progressBar {
-                  background-color: white;
-                  height: 10px;
+            .portfolioTitle {
+                  font-size: 64px;
+                  font-weight: 700;
+                  background: linear-gradient(90deg, #ffffff 20%, #ff9f1c 90%);
+                  -webkit-background-clip: text;
+                  background-clip: text;
+                  -webkit-text-fill-color: transparent;
+
+                  @include mobile {
+                        font-size: 36px;
+                  }
             }
       }
 
-      .container {
+      .list {
             display: flex;
+            flex-direction: column;
+      }
+
+      .row {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, 520px) 1fr;
             align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            gap: 60px;
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-            .wrapper {
-                  max-width: 1366px;
-                  height: 100%;
-                  margin: auto;
-                  align-items: center;
-                  justify-content: center;
-                  display: flex;
-                  gap: 50px;
+            &:last-child {
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
 
-                  @include mobile {
-                        flex-direction: column;
-                  }
-
+            // alternate image side on desktop
+            &:nth-child(even) {
+                  grid-template-columns: 1fr minmax(0, 520px);
 
                   .imageContainer {
-                       width: 100%;
-                       max-width: 600px; // Optional: controls how wide it gets
-                       aspect-ratio: 4 / 3; // Enforces consistent aspect ratio
-                       overflow: hidden;
-                       border-radius: 10px;
- 
-                        @include mobile {
-                              width: 100%;
-                              max-height: 500px;
-                        }
-
-                        .image {
-                              width: 100%;
-                              height: 100%;
-                              object-fit: cover;
-
-                              @include mobile {
-                                    object-fit: contain;
-                              }
-                        }
+                        order: 2;
                   }
 
-                  .textContainer {
-                        flex: 1;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 30px;
-
-                        @include mobile {
-                              transform: none !important;
-                              padding: 10px;
-                              align-items: center;
-                              text-align: center;
-                        }
-
-                        h2 {
-                              font-size: 72px;
-
-                              @include mobile {
-                                    font-size: 32px;
-                              }
-                        }
-
-                        p {
-                              color: gray;
-                              font-size: 20px;
-
-                              @include mobile {
-                                    font-size: 16px;
-                              }
-                        }
-
-                        button {
-                              background-color: orange;
-                              border-radius: 10px;
-                              border: none;
-                              cursor: pointer;
-                              padding: 10px;
-                              width: 200px;
-                        }
+                  .num {
+                        right: auto;
+                        left: 0;
                   }
             }
 
+            @media (max-width: 900px) {
+                  grid-template-columns: 1fr !important;
+                  gap: 30px;
+                  padding: 40px 0;
+
+                  .imageContainer {
+                        order: 0 !important;
+                  }
+            }
+
+            .num {
+                  position: absolute;
+                  top: 20px;
+                  right: 0;
+                  font-size: 110px;
+                  font-weight: 800;
+                  line-height: 1;
+                  color: transparent;
+                  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.12);
+                  pointer-events: none;
+
+                  @include mobile {
+                        font-size: 64px;
+                  }
+            }
+
+            // every image shares the exact same frame
+            .imageContainer {
+                  width: 100%;
+                  aspect-ratio: 16 / 10;
+                  overflow: hidden;
+                  border-radius: 18px;
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+
+                  .image {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.5s;
+                        filter: saturate(0.85) brightness(0.9);
+                  }
+            }
+
+            &:hover .image {
+                  transform: scale(1.07);
+                  filter: saturate(1.1) brightness(1);
+            }
+
+            .body {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 16px;
+                  position: relative;
+
+                  .category {
+                        font-size: 13px;
+                        letter-spacing: 3px;
+                        text-transform: uppercase;
+                        color: orange;
+                  }
+
+                  h2 {
+                        font-size: 52px;
+                        font-weight: 700;
+                        line-height: 1.1;
+
+                        @include mobile {
+                              font-size: 32px;
+                        }
+                  }
+
+                  p {
+                        color: gray;
+                        font-size: 18px;
+                        line-height: 1.6;
+                        max-width: 460px;
+
+                        @include mobile {
+                              font-size: 16px;
+                        }
+                  }
+
+                  .stack {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 8px;
+
+                        span {
+                              padding: 5px 12px;
+                              border-radius: 20px;
+                              font-size: 12px;
+                              color: orange;
+                              border: 1px solid rgba(255, 159, 28, 0.35);
+                        }
+                  }
+
+                  .actions {
+                        display: flex;
+                        gap: 12px;
+                        margin-top: 8px;
+                  }
+            }
+      }
+}
+
+@media (max-width: 900px) {
+      .portfolio .row .imageContainer {
+            max-width: 640px;
       }
 }

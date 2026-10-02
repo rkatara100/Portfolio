@@ -1,0 +1,37 @@
+.cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 36px;
+      height: 36px;
+      margin: -18px 0 0 -18px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 165, 0, 0.8);
+      background: rgba(255, 165, 0, 0.12);
+      pointer-events: none;
+      z-index: 10000;
+      opacity: 0;
+      transition: width 0.25s, height 0.25s, margin 0.25s, background 0.25s;
+
+      &.active {
+            width: 64px;
+            height: 64px;
+            margin: -32px 0 0 -32px;
+            background: rgba(255, 165, 0, 0.25);
+      }
+
+      @media (pointer: coarse) {
+            display: none;
+      }
+}
+
+.scrollProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, rebeccapurple, orange);
+      transform-origin: 0 50%;
+      z-index: 10001;
+}

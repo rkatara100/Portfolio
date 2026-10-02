@@ -7,8 +7,11 @@
 }
 
 html {
-      scroll-snap-type: y mandatory;
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
+}
+
+html.lenis, html.lenis body {
+      height: auto;
 }
 
 body {
@@ -23,11 +26,97 @@ a {
 
 section {
       height: 100vh;
-      scroll-snap-align: center;
+}
+
+section.auto {
+      height: auto;
+}
+
+#Contact {
+      @media (max-width: 738px) {
+            height: auto;
+            min-height: 100vh;
+      }
+}
+
+#Services {
+      height: auto;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #0c0c1d, #111132);
 }
 
 @mixin mobile {
       @media (max-width:738px) {
             @content;
       }
+}
+
+.btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 28px;
+      border: 1px solid transparent;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      overflow: hidden;
+      color: white;
+      transition: box-shadow 0.3s, filter 0.3s;
+
+      &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.6s;
+      }
+
+      &:hover::after {
+            left: 140%;
+      }
+
+      &:active {
+            filter: brightness(0.9);
+      }
+}
+
+.btn-primary {
+      background: linear-gradient(135deg, rebeccapurple, #ff9f1c);
+      box-shadow: 0 6px 24px rgba(102, 51, 153, 0.45);
+
+      &:hover {
+            box-shadow: 0 10px 34px rgba(255, 159, 28, 0.5);
+      }
+}
+
+.btn-light {
+      background: white;
+      color: #0c0c1d;
+
+      &:hover {
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+      }
+}
+
+.btn-outline {
+      border-color: #ff9f1c;
+      color: #ff9f1c;
+      background: rgba(255, 159, 28, 0.06);
+
+      &:hover {
+            background: rgba(255, 159, 28, 0.18);
+            box-shadow: 0 0 24px rgba(255, 159, 28, 0.35);
+      }
+}
+
+.btn-sm {
+      padding: 10px 20px;
+      font-size: 14px;
 }

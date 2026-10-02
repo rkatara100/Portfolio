@@ -3,6 +3,7 @@
 .contact {
       height: 100%;
       max-width: 1150px;
+      padding: 0 24px;
       margin: auto;
       display: flex;
       justify-content: center;
@@ -14,6 +15,9 @@
             padding: 10px;
             gap: 10px;
             flex-direction: column;
+            height: auto;
+            min-height: 100vh;
+            padding-bottom: 60px;
       }
 
       .textContainer {
@@ -32,8 +36,8 @@
 
 
             h1 {
-                  font-size: 100px;
-                  line-height: 88px;
+                  font-size: clamp(48px, 8vw, 100px);
+                  line-height: 1;
 
                   @include mobile {
                         font-size: 36px;
@@ -49,6 +53,7 @@
 
       .formContainer {
             flex: 1;
+            position: relative;
 
             @include mobile {
                   width: 100%;
@@ -61,8 +66,26 @@
                   margin: auto;
                   z-index: -1;
 
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  pointer-events: none;
+
+                  svg {
+                        width: 100%;
+                        max-width: 450px;
+                        height: auto;
+                  }
+
                   @include mobile {
-                        height: 100px;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        justify-content: center;
+
+                        svg {
+                              max-width: 240px;
+                        }
                   }
 
             }
